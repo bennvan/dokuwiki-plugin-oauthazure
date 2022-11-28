@@ -82,12 +82,18 @@ class action_plugin_oauthazure extends Adapter
     /** @inheritDoc */
     public function getLabel()
     {
-        return 'Azure';
+        return 'USYD Email';
     }
 
     /** @inheritDoc */
     public function getColor()
     {
-        return '#008AD7';
+        return '#e64626';
+    }
+
+    public function getSvgLogo()
+    {
+        $logo = $this->getPluginName() . '/logo.svg';
+        return '<img alt="" style="height:60%;margin-right:0.5rem;" src="'.'lib/plugins/'.$logo.'"></img>';
     }
 }
