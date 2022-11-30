@@ -94,7 +94,7 @@ class action_plugin_oauthazure extends Adapter
     public function getSvgLogo()
     {
         $logo = DOKU_PLUGIN . $this->getPluginName() . '/logo.svg';
-        if (file_exists($logo)) return '<div class="plugin_oauthazure_logo">'.file_get_contents($logo).'</div>';
+        if (file_exists($logo)) return inlineSVG($logo,5120);
         return '';
     }
 }
