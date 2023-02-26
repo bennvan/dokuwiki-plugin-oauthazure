@@ -2,6 +2,7 @@
 
 use dokuwiki\plugin\oauth\Adapter;
 use dokuwiki\plugin\oauthazure\Azure;
+use OAuth\Common\Exception\Exception as OAuthException;
 
 /**
  * Service Implementation for Azure authentication
