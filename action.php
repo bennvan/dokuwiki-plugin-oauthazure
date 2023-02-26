@@ -39,6 +39,13 @@ class action_plugin_oauthazure extends Adapter
         $result = (array)$decodedObj;
         if (!$result) throw new OAuthException('Failed to parse data from userinfo from JWT');
 
+        $allowed_tenants = $this->getConf('allowed_tenants');
+        if (!empty($allowed_tenants)){
+            if (!in_array($result['tid'], $allowed_tenants)){
+                throw new OAuthException('Tenant not authorized');
+            }
+        }
+
         $data = [];
         $data['user'] = $result['preferred_username'];
         $data['name'] = $result['name'];
